@@ -1,8 +1,8 @@
 # 一行命令自建zerotier-planet
 
-私有部署zerotier-planet服务，解决访问官方planet速度和延迟问题
-基础镜像源码来源于 [ztncui](https://github.com/key-networks/ztncui-aio),这个主要是用来做私有的zerotier controller的
-Docker Compose 文件来源于 [Jonnyan404](https://github.com/Jonnyan404/zerotier-planet).
+- 私有部署zerotier-planet服务，解决访问官方planet速度和延迟问题
+- 基础镜像源码来源于 [ztncui](https://github.com/key-networks/ztncui-aio),这个主要是用来做私有的zerotier controller
+- Docker Compose 文件来源于 [Jonnyan404](https://github.com/Jonnyan404/zerotier-planet).
 
 
 # 主要的修改如下
