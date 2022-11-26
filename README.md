@@ -1,7 +1,7 @@
 # 一行命令自建zerotier-planet
 
-私有部署zeroteir-planet服务，解决访问官方planet速度和延迟问题
-基础镜像源码来源于 [ztncui](https://github.com/key-networks/ztncui-aio)  
+私有部署zerotier-planet服务，解决访问官方planet速度和延迟问题
+基础镜像源码来源于 [ztncui](https://github.com/key-networks/ztncui-aio),这个主要是用来做私有的zerotier controller的
 Docker Compose 文件来源于 [Jonnyan404](https://github.com/Jonnyan404/zerotier-planet).
 
 
@@ -33,3 +33,10 @@ docker compose up -d
 服务器镜像运行后会在当前目录子目录zerotier-one生成planet文件。
 Linux 客户端拷贝到 /var/lib/zerotier-one/
 windows 客户端拷贝到 C:\ProgramData\ZeroTier\One\
+
+
+#  修改端口
+修改docker compose中环境变量。 
+ZT_ADDR=localhost:5599 ==》 ZT_ADDR=localhost:xxxx
+增加环境变量
+ZPORT=xxxx
