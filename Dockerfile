@@ -70,11 +70,14 @@ COPY --from=argong /buildsrc/binaries/minica /usr/local/bin/minica
 COPY --from=argong /buildsrc/binaries/argon2g /usr/local/bin/argon2g
 COPY --from=argong /buildsrc/binaries/fileserv /usr/local/bin/gfileserv
 
+COPY mkmoonworld-x86_64 /bin/mkmoonworld
+COPY local.conf /local.conf
 COPY start_zt1.sh /start_zt1.sh
 COPY start_ztncui.sh /start_ztncui.sh
 COPY supervisord.conf /etc/supervisord.conf
 
-RUN chmod 0755 /bin/gosu && \
+RUN chmod 0755 /bin/mkmoonworld && \
+    chmod 0755 /bin/gosu && \
     chmod 0755 /usr/local/bin/minica && \
     chmod 0755 /usr/local/bin/argon2g && \
     chmod 0755 /usr/local/bin/gfileserv && \
