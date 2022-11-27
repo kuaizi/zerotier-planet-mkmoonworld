@@ -20,8 +20,20 @@
 # 用法
 
 ```
-docker-compose up -d
-or
+docker run -it -d --restart always --name zt1 \
+            -e HTTP_PORT=4000 \
+            -e HTTP_ALL_INTERFACES=yes \
+            -e ZTNCUI_PASSWD=password \
+            -e ZT_ADDR=localhost:5599 \
+            -p 5599:5599 \
+            -p 5599:5599/udp \
+            -p 4000:4000 \
+            -v $(pwd)/zerotier-one:/var/lib/zerotier-one \
+            -v $(pwd)/ztncui/etc:/opt/key-networks/ztncui/etc \
+            smallbutstrong/zerotier
+  
+# 或者
+wget https://cdn.jsdelivr.net/gh/smallbutstrong/zerotier-planet/docker-compose.yml
 docker compose up -d
 ```
 浏览器访问 `http://ip:4000` 打开controller控制台界面。缺省的登录用户名
@@ -31,8 +43,8 @@ docker compose up -d
 # 各客户端配置planet
 
 服务器镜像运行后会在当前目录子目录zerotier-one生成planet文件。
-Linux 客户端拷贝到 /var/lib/zerotier-one/
-windows 客户端拷贝到 C:\ProgramData\ZeroTier\One\
+- Linux 客户端拷贝到 /var/lib/zerotier-one/
+- windows 客户端拷贝到 C:\ProgramData\ZeroTier\One\
 
 
 #  修改端口
